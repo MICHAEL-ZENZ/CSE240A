@@ -1,8 +1,13 @@
 *.o
 src/predictor
-traces
+
 test.sh
 CMakeLists.txt
 build
 bin
 .vscode
+
+traces/*
+!traces/*.bz2
+
+push.sh
