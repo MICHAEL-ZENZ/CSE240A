@@ -16,8 +16,8 @@ all: $(PREDICTOROBJS)
 test: testCompile.o
 	$(CXX) $(CXXFLAGS) -lm -o predictor testCompile.o
 
-testCompile.o:  testCompile.cc
-	$(CXX) $(CXXFLAGS) -c testCompile.cc
+testCompile.o:  testCompile.c
+	$(CXX) $(CXXFLAGS) -c testCompile.c
 
 clean:
 	rm -f predictor *.o
