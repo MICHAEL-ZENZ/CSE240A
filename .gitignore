@@ -1,2 +1,8 @@
 *.o
 src/predictor
+traces
+test.sh
+CMakeLists.txt
+build
+bin
+.vscode
