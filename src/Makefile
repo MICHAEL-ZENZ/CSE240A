@@ -1,14 +1,16 @@
-CC=gcc
-OPTS=-g -std=c99 -Werror
+CXX=g++
+CXXFLAGS= -std=c++11 -ggdb -Werror
+PREDICTOROBJS=main.o 2bc-gskew.o basicUnit.o gshare.o predictor.o tournament.o
 
-all: main.o predictor.o
-	$(CC) $(OPTS) -lm -o predictor main.o predictor.o
 
-main.o: main.c predictor.h
-	$(CC) $(OPTS) -c main.c
+%.o: %.c
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-predictor.o: predictor.h predictor.c
-	$(CC) $(OPTS) -c predictor.c
+all: $(PREDICTOROBJS)
+	$(CXX) $(CXXFLAGS) -o predictor $(PREDICTOROBJS)
+
+.c.o:
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o predictor;
+	rm -f predictor *.o
